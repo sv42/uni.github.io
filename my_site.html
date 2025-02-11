@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Університети України</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Додаємо стильний ползунок */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #eef2f3;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #fbfbfb;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #002c60;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #004d99;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(to right, #0056b3, #002c60);
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: white;
+            color: #0056b3;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .universities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .university-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .university-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #004d99;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" id="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="#">Університети</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Знайди свій ідеальний університет</h1>
+        <p>Оберіть кращий навчальний заклад для вашого майбутнього</p>
+        <a href="#" class="btn">Переглянути університети</a>
+    </section>
+
+    <section class="universities">
+        <div class="university-card">
+            <img src="images/knu.jpg" alt="Київський національний університет">
+            <h3>Київський національний університет</h3>
+            <p>Один з найкращих університетів України.</p>
+        </div>
+        <div class="university-card">
+            <img src="images/lnu.jpg" alt="Львівський національний університет">
+            <h3>Львівський національний університет</h3>
+            <p>Потужна освітня та наукова установа.</p>
+        </div>
+        <div class="university-card">
+            <img src="images/kpi.jpg" alt="Харківський політехнічний інститут">
+            <h3>Харківський політехнічний інститут</h3>
+            <p>Лідер у сфері технічної освіти.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Володимир Столярчук. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        const phrases = [
+            "Майбутнє починається тут",
+            "Освіта – ключ до успіху",
+            "Вибери найкращий університет"
+        ];
+
+        window.onload = function () {
+            const logo = document.getElementById("logo");
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            logo.textContent = phrases[randomIndex];
+        };
+    </script>
+</body>
+
+</html>
