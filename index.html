@@ -1,0 +1,270 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni Q</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .counter-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            width: fit-content;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.5em;
+            color: #004d99;
+            font-weight: bold;
+        }
+
+        /* Додаємо стильний ползунок */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #eef2f3;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #fbfbfb;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #002c60;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #004d99;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(to right, #0056b3, #002c60);
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: white;
+            color: #0056b3;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .universities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .university-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .university-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #004d99;
+            color: white;
+        }
+
+        /* Окреме стилізування для різних рядків */
+        .universities-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Центруємо заголовок */
+        .top-universities h2 {
+            text-align: center;
+            font-size: 2em;
+            margin: 40px 0;
+            color: #004d99;
+        }
+
+        /* Стилі для місць */
+        .first-place h3,
+        .second-place h3,
+        .third-place h3 {
+            font-size: 1.5em;
+            color: gold;
+        }
+
+        .first-place h3 {
+            color: gold;
+        }
+
+        .second-place h3 {
+            color: silver;
+        }
+
+        .third-place h3 {
+            color: #cd7f32;
+            /* бронзовий колір */
+        }
+
+        .fourth-place h3,
+        .fifth-place h3 {
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Home</div>
+        <nav>
+            <ul>
+                <li><a href="/uni">Universities</a></li>
+                <li><a href="/raiting">Rating</a></li>
+                <li><a href="">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Find your ideal university</h1>
+        <p>Choose the best educational institution for your future</p>
+        <a href="/uni" class="btn">View universities</a>
+    </section>
+
+    <!-- Тепер заголовок "Топ-5 університетів України" по центру -->
+    <section class="top-universities">
+        <h2>Top 5 universities in Ukraine</h2>
+    </section>
+
+    <section class="universities">
+        <!-- Перший рядок з трьома університетами -->
+        <div class="universities-row">
+            <div class="university-card first-place">
+                <img src="{% static 'sitepages/img/knu.jpg' %}" alt="Київський національний університет">
+                <h3>1. Shevchenko National University of Kyiv</h3>
+                <p>One of the best universities in Ukraine.</p>
+            </div>
+            <div class="university-card second-place">
+                <img src="{% static 'sitepages/img/kpi.jpeg' %}" alt="Київський політехнічний інститут">
+                <h3>2. National Technical University "Sikorsky Kyiv Polytechnic Institute"</h3>
+                <p>A recognized leader in technical education in Ukraine.</p>
+            </div>
+            <div class="university-card third-place">
+                <img src="{% static 'sitepages/img/lpu.jpg' %}" alt="Львівська політехніка">
+                <h3>3. Lviv Polytechnic National University</h3>
+                <p>A leader in technical education and innovation.</p>
+            </div>
+        </div>
+
+        <!-- Другий рядок з двома університетами -->
+        <div class="universities-row">
+            <div class="university-card fourth-place">
+                <img src="{% static 'sitepages/img/khnu.jpg' %}" alt="Харківський університет">
+                <h3>4. Karazin Kharkiv National University</h3>
+                <p>A prestigious university with a rich history.</p>
+            </div>
+            <div class="university-card fifth-place">
+                <img src="{% static 'sitepages/img/su.jpg' %}" alt="Сумський університет">
+                <h3>5. Sumy State University</h3>
+                <p>A prestigious university with a rich history.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="counter-card">
+        <div>Number of students</div>
+        <div id="student-counter">0</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Volodymyr Stolyarchuk. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function animateCounter(target, elementId, duration) {
+            let start = 0;
+            let increment = target / (duration / 50);
+            let counterElement = document.getElementById(elementId);
+
+            function updateCounter() {
+                start += increment;
+                if (start >= target) {
+                    counterElement.textContent = target;
+                } else {
+                    counterElement.textContent = Math.floor(start);
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+            requestAnimationFrame(updateCounter);
+        }
+
+        window.onload = function () {
+            const phrases = [
+                "Майбутнє починається тут разом з Uni Q",
+                "Освіта – ключ до успіху",
+                "Вибери найкращий університет"
+            ];
+            const logo = document.getElementById("logo");
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            logo.textContent = phrases[randomIndex];
+
+            animateCounter(12345, "student-counter", 2000);
+        };
+    </script>
+</body>
+
+</html>
